@@ -11,13 +11,13 @@ pipeline {
       parallel {
         stage('Unit') {
           steps {
-            sh 'echo Unit'
+            echo 'Unit'
           }
         }
 
         stage('Performance') {
           steps {
-            sh 'echo Performance'
+            echo 'Performance'
           }
         }
 
@@ -26,19 +26,19 @@ pipeline {
 
     stage('Frontend') {
       steps {
-        sh 'echo Build'
+        echo 'Frontend'
       }
     }
 
     stage('Static Analysis') {
       steps {
-        sh 'echo Static Analysis'
+        echo 'Static'
       }
     }
 
     stage('Deploy') {
       steps {
-        sh 'echo Deploy'
+        echo 'Deploy'
       }
     }
 
