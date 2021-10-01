@@ -10,7 +10,6 @@ pipeline {
       }
 
       steps {
-        sh 'npm cache clean --force'
         sh 'cd app; mvn -B -DskipTests clean package'
         stash name: 'war', includes: 'target/**'
       }
