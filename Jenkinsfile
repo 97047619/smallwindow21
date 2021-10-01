@@ -10,7 +10,7 @@ pipeline {
       }
 
       steps {
-        sh 'cd app; sudo mvn -B -DskipTests clean package'
+        sh 'cd app; mvn -B -DskipTests clean package'
         stash name: 'war', includes: 'target/**'
       }
     }
