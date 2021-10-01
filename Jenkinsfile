@@ -10,9 +10,7 @@ pipeline {
       }
 
       steps {
-        sh 'cd app'
-        sh 'pwd'
-        sh 'mvn -B -DskipTests clean package'
+        sh 'cd app; mvn -B -DskipTests clean package'
         stash name: 'war', includes: 'target/**'
       }
     }
