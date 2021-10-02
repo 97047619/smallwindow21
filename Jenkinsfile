@@ -2,9 +2,6 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      environment {
-        HOME="."
-      }
       agent {
         docker {
             image 'maven:3-alpine'
@@ -13,7 +10,7 @@ pipeline {
       }
 
       steps {
-        sh 'cd app; mvn -B -DskipTests clean package'
+        bat 'cd app; mvn -B -DskipTests clean package'
         stash name: 'war', includes: 'target/**'
       }
     }
