@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        dir(path: '\\app')
+        bat 'cd app'
         bat 'mvn -B -DskipTests package'
       }
     }
